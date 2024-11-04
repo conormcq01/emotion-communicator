@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Communicator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>How are you feeling?</h1>
+        <div class="buttons">
+            <button class="emotion-button" onclick="sendEmotion('I am having a breakdown', '😭')">😭 I'm having a breakdown</button>
+            <button class="emotion-button" onclick="sendEmotion('I am shutting down', '😑')">😑 I'm shutting down</button>
+            <button class="emotion-button" onclick="sendEmotion('I am doing okay', '🙂')">🙂 I'm doing okay</button>
+            <button class="emotion-button" onclick="sendEmotion('Don\'t touch me', '🙅‍♂️')">🙅‍♂️ Don't touch me</button>
+            <button class="emotion-button" onclick="sendEmotion('It\'s okay to talk now', '👌')">👌 It's okay to talk now</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendEmotion(message, emoji) {
+            // Show a simple alert as feedback
+            alert(`Notification sent: ${message}`);
+
+            // Send data to back-end (assuming a POST endpoint is set up)
+            try {
+                const response = await fetch('https://your-backend-url.com/send-notification', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: `${emoji} ${message}`
+                    })
+                });
+
+                if (response.ok) {
+                    console.log('Notification sent successfully');
+                } else {
+                    console.error('Failed to send notification');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

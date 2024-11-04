@@ -1,0 +1,85 @@
+
+/* Amazing New CSS for the Emotion Communicator Website */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: translateY(-10px);
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .emotion-button {
+    font-size: 1.1em;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    transition: all 0.3s;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .emotion-button:hover {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .emotion-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .emotion-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.8em;
+    }
+    .emotion-button {
+      font-size: 1em;
+      padding: 10px;
+    }
+  }
+  
